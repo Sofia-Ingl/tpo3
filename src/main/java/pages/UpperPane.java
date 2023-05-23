@@ -40,9 +40,9 @@ public class UpperPane extends Page {
         DriverHandler.waitUntilPageLoads(driver, 60);
     }
 
-    public String getHostingServiceLoginPageURL() {
+    public void openHostingServiceLoginPageURL() {
         WebElement loginLink = driver.findElement(By.xpath("//span[contains(text(),'Вход')]/.."));
-        return loginLink.getAttribute("href").split("[?]")[0];
+        loginLink.click();
     }
 
     public void hoverDropdownMenuItem() {

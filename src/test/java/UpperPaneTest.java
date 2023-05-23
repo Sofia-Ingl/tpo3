@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import pages.UpperPane;
 import utils.DriverHandler;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -59,7 +60,11 @@ public class UpperPaneTest {
         drivers.parallelStream().forEach(driver -> {
             UpperPane upperPane = new UpperPane(driver);
             upperPane.loadSite();
-            assertEquals("https://hosting.timeweb.ru/", upperPane.getHostingServiceLoginPageURL());
+            upperPane.openHostingServiceLoginPageURL();
+            List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(1));
+            DriverHandler.waitUntilPageLoads(driver, 60);
+            assertEquals("https://hosting.timeweb.ru/login", driver.getCurrentUrl());
             driver.quit();
         });
     }
