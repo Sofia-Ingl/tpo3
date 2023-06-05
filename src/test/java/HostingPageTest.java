@@ -7,6 +7,7 @@ import utils.PropsHandler;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HostingPageTest {
@@ -22,6 +23,7 @@ public class HostingPageTest {
         drivers.parallelStream().forEach(driver -> {
             HostingPage hostingPage = new HostingPage(driver);
             hostingPage.loadSite(PropsHandler.get("hosting_page_url"));
+            assertFalse(hostingPage.modalContentIsShown());
             hostingPage.listAllTariffs();
             assertTrue(hostingPage.modalContentIsShown());
             driver.quit();
@@ -34,6 +36,7 @@ public class HostingPageTest {
         drivers.parallelStream().forEach(driver -> {
             HostingPage hostingPage = new HostingPage(driver);
             hostingPage.loadSite(PropsHandler.get("hosting_page_url"));
+            assertFalse(hostingPage.registrationFormIsShown());
             hostingPage.listAllTariffsAndTryOrder();
             assertTrue(hostingPage.registrationFormIsShown());
             driver.quit();
@@ -46,6 +49,7 @@ public class HostingPageTest {
         drivers.parallelStream().forEach(driver -> {
             HostingPage hostingPage = new HostingPage(driver);
             hostingPage.loadSite(PropsHandler.get("hosting_page_url"));
+            assertFalse(hostingPage.registrationFormIsShown());
             hostingPage.tryFreeTariff();
             assertTrue(hostingPage.registrationFormIsShown());
             driver.quit();
@@ -58,6 +62,7 @@ public class HostingPageTest {
         drivers.parallelStream().forEach(driver -> {
             HostingPage hostingPage = new HostingPage(driver);
             hostingPage.loadSite(PropsHandler.get("hosting_page_url"));
+            assertFalse(hostingPage.relocateFormIsShown());
             hostingPage.relocateProject();
             assertTrue(hostingPage.relocateFormIsShown());
             driver.quit();

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class HostingPage extends Page {
 
     @FindBy(xpath = "//div[contains(text(),'Все тарифы списком')]")
@@ -13,13 +15,13 @@ public class HostingPage extends Page {
     WebElement orderButton;
 
     @FindBy(xpath = "//div[contains(@class,'ui-modal-content')]")
-    WebElement modalContentBackground;
+    List<WebElement> modalContentBackground;
 
     @FindBy(xpath = "//div[contains(text(),'Регистрация')]")
-    WebElement registrationFormTitle;
+    List<WebElement> registrationFormTitle;
 
     @FindBy(xpath = "//div[contains(text(),'Перенести сайт')]")
-    WebElement relocateFormTitle;
+    List<WebElement> relocateFormTitle;
 
     @FindBy(xpath = "//div[contains(text(),'Year+')]/../..//button")
     WebElement tryFreeButton;
@@ -41,17 +43,17 @@ public class HostingPage extends Page {
     }
 
     public boolean modalContentIsShown() {
-        return modalContentBackground != null;
+        return modalContentBackground.size() != 0;
     }
 
     public boolean registrationFormIsShown() {
         if (!modalContentIsShown()) return false;
-        return registrationFormTitle != null;
+        return registrationFormTitle.size() != 0;
     }
 
     public boolean relocateFormIsShown() {
         if (!modalContentIsShown()) return false;
-        return relocateFormTitle != null;
+        return relocateFormTitle.size() != 0;
     }
 
     public void tryFreeTariff() {

@@ -36,7 +36,7 @@ public class DriverHandler {
         drivers.add(getChromeDriver());
 //        drivers.add(getFirefoxDriver());
         drivers.parallelStream()
-                .forEach(driver -> driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60)));
+                .forEach(driver -> driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1)));
         return drivers;
     }
 

@@ -111,42 +111,4 @@ public class DedicatedServerPage extends Page {
     }
 
 
-
-
-
-
-//    public void varyPrice() {
-//        WebElement sliderWrapper = driver.findElement(By.xpath("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]"));
-//        WebElement sliderFrom = driver.findElement(By.xpath("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]/input[@class='from']"));
-//        WebElement sliderTo = driver.findElement(By.xpath("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]/input[@class='to']"));
-//        WebElement sliderValues = driver.findElement(By.xpath("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'value')]"));
-//        System.out.println(sliderValues.getText());
-//        System.out.println(sliderWrapper.getAttribute("value"));
-//        System.out.println(sliderFrom.getAttribute("value"));
-//        System.out.println(sliderTo.getAttribute("value"));
-//
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(sliderFrom).click().sendKeys(Keys.RIGHT).build().perform();
-////        actions.moveToElement(sliderFrom).sendKeys(Keys.RIGHT).build().perform();
-//
-//
-//
-////        sliderFrom.sendKeys(Keys.RIGHT);
-////        JavascriptExecutor js = (JavascriptExecutor) driver;
-////        js.executeScript("javascript:document.querySelector('input[data-selenium=\"page-dedicated-server-servers-ready-filters-price-range-from\"]').value=8294;");
-//        //js.executeScript("javascript:document.querySelector['input[data-selenium=\"page-dedicated-server-servers-ready-filters-price-range-from\"]'].value=1.5;");
-//        System.out.println(sliderValues.getText());
-//        System.out.println(sliderFrom.getAttribute("value"));
-//        System.out.println(sliderTo.getAttribute("value"));
-//    }
-
-    //$x("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]")
-    //slider = page.find_element_by_id("sliderWidget")
-    //for i in range(10):
-    //  slider.send_keys(Keys.RIGHT)
-
-    //$x("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'value')]")
-
-    //$x("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]/input[@class='from']")
-    //$x("//div[contains(text(),'Цена в месяц, руб.')]/../div[2]//div[contains(@class,'slider-wrapper')]/input[@class='to']")
 }
