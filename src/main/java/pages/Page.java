@@ -2,6 +2,7 @@ package pages;
 
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import utils.DriverHandler;
 import utils.PropsHandler;
 
@@ -23,12 +24,14 @@ public abstract class Page {
     }
 
     public void loadSite(String resourceLocator) {
+        PageFactory.initElements(driver, this);
         driver.get(resourceLocator);
         driver.manage().window().maximize();
         DriverHandler.waitUntilPageLoads(driver, 60);
     }
 
     public void loadSite() {
+        PageFactory.initElements(driver, this);
         driver.get(PropsHandler.get("base_url"));
         driver.manage().window().maximize();
         DriverHandler.waitUntilPageLoads(driver, 60);

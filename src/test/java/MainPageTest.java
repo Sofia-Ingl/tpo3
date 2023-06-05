@@ -85,9 +85,9 @@ public class MainPageTest {
         drivers.parallelStream().forEach(driver -> {
             MainPage mainPage = new MainPage(driver);
             mainPage.loadSite();
-            assertTrue(mainPage.checkCommentIsActiveBySequenceNumber(1));
+            assertTrue(mainPage.checkFirstCommentIsActive());
             mainPage.trySwipe();
-            assertTrue(mainPage.checkCommentIsActiveBySequenceNumber(1));
+            assertTrue(mainPage.checkFirstCommentIsActive());
             driver.quit();
         });
     }
