@@ -2,6 +2,12 @@ package pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DriverHandler;
+import utils.PropsHandler;
+
+import java.time.Duration;
 
 public class DedicatedServerPage extends Page {
 
@@ -108,6 +114,8 @@ public class DedicatedServerPage extends Page {
 
     public void tryBuyFirstItem() {
         firstDedicatedServerOfferedBuyButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(PropsHandler.get("dedicated_server_page_url"))));
     }
 
 

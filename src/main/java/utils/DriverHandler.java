@@ -33,8 +33,8 @@ public class DriverHandler {
 
     public static List<WebDriver> getDrivers() {
         List<WebDriver> drivers = new ArrayList<>();
-        drivers.add(getChromeDriver());
-//        drivers.add(getFirefoxDriver());
+//        drivers.add(getChromeDriver());
+        drivers.add(getFirefoxDriver());
         drivers.parallelStream()
                 .forEach(driver -> driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1)));
         return drivers;

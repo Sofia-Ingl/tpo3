@@ -30,9 +30,6 @@ public class DomainPage extends Page{
     @FindBy(xpath = "//a[@class='delete']")
     List<WebElement> cartClearButton;
 
-//    @FindBy(xpath = "//a[contains(@class, 'full')]")
-//    WebElement fullCart;
-
 
     public DomainPage(WebDriver driver) {
         super(driver);
@@ -71,8 +68,5 @@ public class DomainPage extends Page{
         return cartClearButton.size() != 0;
     }
 
-//    public void openCart() {
-//        fullCart.click();
-//    }
 
 }
