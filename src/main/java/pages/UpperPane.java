@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.DriverHandler;
-import utils.PropsHandler;
 
 import java.time.Duration;
 
@@ -49,7 +47,6 @@ public class UpperPane extends Page {
     public void openDocs() {
         String url = driver.getCurrentUrl();
         docsLink.click();
-//        DriverHandler.waitUntilPageLoads(driver, 60);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(url)));
     }
@@ -57,7 +54,6 @@ public class UpperPane extends Page {
     public void openCommunity() {
         String url = driver.getCurrentUrl();
         communityLink.click();
-//        DriverHandler.waitUntilPageLoads(driver, 60);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(url)));
     }
